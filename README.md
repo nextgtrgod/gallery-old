@@ -2,9 +2,10 @@
 Simple photo gallery
 
 
-* [node.js](https://nodejs.org/)
-* [react.js](https://reactjs.org/)
-* [vibrant.js](https://jariz.github.io/vibrant.js/)
+* [Node.js](https://nodejs.org/)
+* [Pug](https://pugjs.org/api/getting-started.html)
+* [React.js](https://reactjs.org/)
+* [Vibrant.js](https://jariz.github.io/vibrant.js/)
 * [SQIP](https://github.com/technopagan/sqip)
 
 
