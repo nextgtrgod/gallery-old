@@ -5,8 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-		admin: './src/app.js',
-		index: './src/main.js'
+		app: './src/app.js',
+		main: './src/main.js'
 	},
 
     output: {
@@ -53,9 +53,7 @@ module.exports = {
     },
     
    plugins: [
-        new ExtractTextPlugin({
-            filename: ('styles.css')
-        }),
+        new ExtractTextPlugin('[name].css'),
         // new webpack.optimize.UglifyJsPlugin({
         //     compress: {
         //         warnings: false,
@@ -86,7 +84,8 @@ module.exports = {
 		port: 6060,
         host: '0.0.0.0',
         proxy: {
-            '/': 'http://localhost:9090'
+            '/': 'http://localhost:9090',
+            '/admin': 'http://localhost:9090/admin'
         }
     },
 
