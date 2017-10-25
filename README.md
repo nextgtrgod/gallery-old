@@ -10,11 +10,13 @@ Simple photo gallery
 
 
 ## Todo
-- [ ] CSS Grid layout
-- [ ] node.js rendering
-- [ ] movement animation
+- [x] CSS Grid layout
+- [x] node.js rendering for mobile
+- [x] Mobile layout lazyload
+- [x] flex fallback (ie)
+- [ ] Desktop layout rendering (react, react-router)
 - [ ] lightbox
-- [ ] resize
+- [ ] movement animation
 - [ ] animated bg
 - [ ] admin page (react)
 - [ ] edit/post/delete photos
