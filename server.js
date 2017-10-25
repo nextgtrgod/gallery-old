@@ -3,15 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const device = require('express-device');
 const bodyParser = require('body-parser');
-const pug = require('pug');
 
-
-// pages
-const indexPageData = require('./config/pages/index');
-const adminPageData = require('./config/pages/admin');
-const pageNotFound = require('./config/pages/404');
-
+const route = require('./lib/route');
 
 // user data
 const userData = require('./config/user');
@@ -25,49 +20,24 @@ app.set('port', (process.env.PORT || 9090));
 app.set('view engine', 'pug')
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(device.capture());
 app.use((req, res, next) => {
     res.setHeader('Cache-Control', 'no-cache');
     next();
 });
 
 
-// temp
-function writeHtml(req, res, filename) {
-    let html = pug.renderFile(path.join(__dirname, 'views', `${filename}.pug`), adminPageData);
-
-    fs.writeFile(
-        path.join(__dirname, 'public', `${filename}.html`),
-        html,
-        'utf-8',
-        error => {
-            if (error) throw error;
-            res.sendFile(path.join(__dirname, 'public', `${filename}.html`));
-        }
-    );
-};
-
-
 // routes
-app.get('/admin', (req, res) => {
+app.get('/admin', (req, res) => route(req, res, 'admin'));
 
-    // res.render('admin', adminPageData);
-    writeHtml(req, res, 'admin');
-});
-
-
-app.get('/', (req, res) => {
-
-    // res.render('index', indexPageData);
-    writeHtml(req, res, 'index');
-});
+app.get('/', (req, res) => route(req, res, 'main'));
 
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use((req, res) => {
     res.status(400);
-    res.render('404', pageNotFound);
+    route(req, res, '404')
 });
 
 

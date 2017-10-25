@@ -1,4 +1,15 @@
 extends layout
 
 block content
-	h1 Here should be the photos
+	main
+		.gallery
+			each image in images
+				.gallery__item(
+					tabindex=0
+					data-delay=`${image.delay}`
+					data-id=`${image.thumb}`
+					style={
+						'background-image': `url('./images/${image.thumb}')`,
+						'grid-area': `${image.grid}`,
+						'color': `${image.hover}`
+					})
