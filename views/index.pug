@@ -1,14 +1,4 @@
 extends layout
 
 block content
-	main
-		.gallery
-			each image in images
-				.gallery__item(
-					tabindex=0
-					data-delay=`${image.delay}`
-					style={
-						'background-image': `url('./images/${image.small}')`,
-						'grid-area': `${image.grid}`,
-						'color': `${image.hover}`
-					})
+	#root

@@ -28,6 +28,7 @@ export default class LazyLoad {
 					img.onload = () => {
 						item.style.backgroundImage = `url("${item.dataset.src}")`;
 						item.dataset.loaded = true;
+						delete item.dataset.src;
 						img = null;
 					};
 

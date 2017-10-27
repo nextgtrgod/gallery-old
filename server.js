@@ -28,6 +28,21 @@ app.use((req, res, next) => {
 
 
 // routes
+app.get('/api/getData', (req, res) => {
+    fs.readFile(`${__dirname}/api/images.json`, 'utf8', (error, data) => {
+        if (error) throw error;
+
+        // setTimeout(() => {
+            res.send({
+                status: 'success',
+                data: JSON.parse(data)
+            });
+            return;
+        // }, 2000);
+    });
+});
+
+
 app.get('/admin', (req, res) => route(req, res, 'admin'));
 
 app.get('/', (req, res) => route(req, res, 'main'));
@@ -35,10 +50,10 @@ app.get('/', (req, res) => route(req, res, 'main'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res) => {
-    res.status(400);
-    route(req, res, '404')
-});
+// app.use((req, res) => {
+//     res.status(400);
+//     route(req, res, '404')
+// });
 
 
 // 

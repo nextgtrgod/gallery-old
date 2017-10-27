@@ -1,9 +1,9 @@
-import main from './styles/mobile.styl';
-
-import 'babel-polyfill';
+import './polyfills/Array.from';
 
 import detectSupport from './modules/detectSupport';
 import LazyLoad from './modules/LazyLoad';
+
+import main from './styles/mobile.styl';
 
 
 document.addEventListener('DOMContentLoaded', () => {

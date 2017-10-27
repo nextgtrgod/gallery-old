@@ -5,18 +5,34 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-		app: './src/app.js',
-        main: './src/main.js',
+		app: './src/app.jsx',
+        main: './src/main.jsx',
         mobile: './src/mobile.js'
 	},
 
     output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: '[name].js'
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'public')
     },
 
     module: {
         rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: [
+                    'react-hot-loader/webpack',
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['env', 'react'], // 'babili'
+                            plugins: [
+                                ['transform-class-properties', { 'spec': true }]
+                            ]
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
@@ -80,12 +96,13 @@ module.exports = {
     ],
 
     devServer: {
+        historyApiFallback: true,
 		inline: true,
 		contentBase: './public',
 		port: 6060,
         host: '0.0.0.0',
         proxy: {
-            '/': 'http://localhost:9090',
+            '/api': 'http://localhost:9090/',
             '/admin': 'http://localhost:9090/admin'
         }
     },

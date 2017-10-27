@@ -14,7 +14,8 @@ Simple photo gallery
 - [x] node.js rendering for mobile
 - [x] Mobile layout lazyload
 - [x] flex fallback (ie)
-- [ ] Desktop layout rendering (react, react-router)
+- [x] Desktop layout rendering (react, react-router)
+- [x] 404 page
 - [ ] lightbox
 - [ ] movement animation
 - [ ] animated bg
