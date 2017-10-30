@@ -1,12 +1,26 @@
 // @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&text=404pagenotfoundReturn');
-@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100&text=404pagenotfoundgoback');
+@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100&text=0123456789pagenotfoundgoback');
+
+
+absolute()
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+
+background-default()
+	background-size cover
+	background-position center
+	background-repeat no-repeat
+
+
 
 body
 	position relative
-	min-height 100vh
+	height 100vh
 	margin 0
 	padding 0
-	// background-color #dde9e6
 	background-color #252626
 	// font-family: 'Open Sans Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif
 	font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif
@@ -18,6 +32,7 @@ body
 	display grid
 	justify-content center
 	align-content center
+	animation fade-in .4s forwards
 
 	@media (min-width 720px)
 		top 0
@@ -39,36 +54,41 @@ body
 
 	&__item
 		position relative
-		padding 1em
-		background-repeat no-repeat
-		background-position center
-		background-size cover
-		cursor pointer
-		// opacity 0
-		box-shadow 0px 0px 10px rgba(17, 17, 17, .8)
-		transition opacity .2s, box-shadow .4s, filter .2s
-		transition-timing-function linear
-		// filter grayscale(100%)
-		image-rendering pixelated
+		background-default()
+		pointer-events none
+		overflow hidden
+		// image-rendering pixelated
 		&.loaded
-			opacity 1
-			box-shadow 4px 4px 20px rgba(17, 17, 17, .8)
+			pointer-events all
+			cursor pointer
+			&:after
+				animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
 
 		&:before
 			content ''
-			position absolute
-			width 100%
-			height 100%
-			top 0
-			left 0
+			absolute()
 			background currentColor
 			mix-blend-mode exclusion
 			opacity 0
-			pointer-events none
 			transition opacity .2s
-		
+			pointer-events none
+
+		&:after
+			content ''
+			position absolute
+			top -2px
+			left -2px
+			width calc(100% + 4px)
+			height calc(100% + 4px)
+			background-color #262626
+			transform-origin 50% 100%
+			pointer-events none
+			z-index 1
+
+
+		&:focus
 		&:hover
-			filter grayscale(0%)
+			outline none
 			&:before
 				opacity 1
 
@@ -77,11 +97,14 @@ body
 		display flex
 		align-items center
 		padding 1em
-		background-color  #FFFA3A
+		background-color #FFFA3A
+		border 1px solid #111
+		box-shadow 7px 7px 0px #111
 		color #252626
-		cursor pointer
 		transition all .2s
+		cursor pointer
 		svg
+			margin 0 0 0 auto
 			width 1.5em
 			height 1.5em
 			polygon
@@ -89,41 +112,55 @@ body
 		
 		&[data-direction='prev']
 			svg
+				margin 0
 				transform rotate(180deg)
 
+		// &:focus
 		&:hover
+			outline none
 			background-color #442EF4
 			color #FFF
-
 	
+
+
+.page-number
+	position fixed
+	left 5px
+	bottom 0
+	font-size 12em
+	line-height 1
+	color #442EF4
+	pointer-events none
+	text-shadow -9px 10px 0px #111
+
+
 
 section
 	animation fade-in .6s forwards
 
 	&.not-found
-		position absolute
-		top 0
-		left 0
-		right 0
-		bottom 0
+		absolute()
 		height 100vh
 		padding 20px
 		text-shadow 12px 7px 7px rgba(17, 17, 17, .3)
 		user-select none
+		z-index 2
 		&:before
 			content ''
 			position absolute
 			top 0
 			left 0
 			bottom 0
-			width 30%
-			background linear-gradient(to right, rgba(38, 38, 38, 0.95), rgba(38, 38, 38, 0))
-			z-index 2
+			width 50%
+			background scrim-gradient(
+				90deg,
+    			#262626,
+    			transparent
+  			)
+
 		&[data-slideshow='false']
 			background-image url('./assets/404-bg.jpg')
-			background-size cover
-			background-position center
-			background-repeat no-repeat
+			background-default()
 
 		
 		&>*
@@ -150,24 +187,13 @@ section
 				border-bottom 1px solid #FFF
 
 
-#slideshow
-	position absolute
-	top 0
-	left 0
-	right 0
-	bottom 0
-	z-index 1
-	animation fade-in .6s forwards
-	.slide
-		position absolute
-		top 0
-		left 0
-		right 0
-		bottom 0
-		background-size cover
-		background-position center
-		background-repeat no-repeat
-		transition opacity 2s
+	&.slideshow
+		absolute()
+		z-index 1
+		.slide
+			absolute()
+			background-default()
+			transition opacity 2s
 
 
 .visible

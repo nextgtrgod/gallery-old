@@ -8,14 +8,11 @@ export default function NotFound({ data = [] }) {
 
 	let isSlideshow = data.length;
 
-	return (
-		<section className='not-found' data-slideshow={isSlideshow ? true : false}>
-			{isSlideshow ? 
-				<Slideshow data={data} />
-				: null
-			}
-
-			<div className="bg"></div>
+	let layout = [
+		<section
+			key='not-found'
+			className='not-found'
+			data-slideshow={isSlideshow ? true : false}>
 
 			<h1>404</h1>
 			<h3>page not found</h3>
@@ -23,5 +20,13 @@ export default function NotFound({ data = [] }) {
 			<Link to='/'>go back</Link>
 
 		</section>
-	)
+	];
+
+	if (isSlideshow) {
+		layout.push(
+			<Slideshow data={data} key='slideshow' />
+		)
+	};
+
+	return layout;
 }

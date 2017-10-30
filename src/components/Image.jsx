@@ -1,19 +1,40 @@
 import React from 'react';
 
+import preload from '../modules/preload';
 
-export default function Image(props) {
 
-	let data = props.data;
+export default class Image extends React.Component {
+	constructor(props) {	
+		super(props);
 
-	return (
-		<div
-			key={props.index}
-			className='gallery__item'
-			style={{
-				backgroundImage: `url('${data.small}')`,
-				gridArea: `${data.grid}`,
-				color: `${data.hover}`
-			}}
-		/>
-	)
+		this.state = {
+			data: this.props.data,
+			background: null,
+			loaded: false
+		}
+	}
+
+	componentWillMount = () => {
+
+		preload(
+			this.state.data.small,
+			() => this.setState({ background: this.state.data.small })
+		);
+
+	}
+
+	render() {
+		return (
+			<div
+				key={this.props.index}
+				className={'gallery__item' + (this.state.background ? ' loaded' : '')}
+				style={{
+					backgroundImage: (this.state.background ? `url(${this.state.background})` : null),
+					gridArea: this.props.grid,
+					color: this.state.data.hover
+				}}
+				tabIndex={0}
+			/>
+		)
+	}
 }

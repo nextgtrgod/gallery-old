@@ -58,7 +58,10 @@ module.exports = {
                                 loader: 'postcss-loader',
                                 options: {
                                     sourceMap: true,
-                                    plugins: () => [ require('autoprefixer')('last 2 versions') ]
+                                    plugins: () => [
+                                        require('autoprefixer')('last 2 versions'),
+                                        require('postcss-easing-gradients')
+                                    ]
                                 }
                             },
                             'stylus-loader'

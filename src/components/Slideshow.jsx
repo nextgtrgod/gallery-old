@@ -1,6 +1,7 @@
 import React from 'react';
 
 import pageVisibility from '../modules/pageVisibility';
+import preload from '../modules/preload';
 
 
 export default class Slideshow extends React.Component {
@@ -37,25 +38,23 @@ export default class Slideshow extends React.Component {
 
 
 		// preload
-		let img = new Image();
+		preload(
+			this.state.data[this.index].full,
+			() => {
+				this.setState({
+					currentSlide: (this.invert) ? this.state.currentSlide : this.state.data[this.index],
+					nextSlide: (this.invert) ? this.state.data[this.index] : this.state.nextSlide
+				});
 
-		img.onload = () => {
-
-			this.setState({
-				currentSlide: (this.invert) ? this.state.currentSlide : this.state.data[this.index],
-				nextSlide: (this.invert) ? this.state.data[this.index] : this.state.nextSlide
-			});
-	
-			img = null;
-			this.timeout = setTimeout(() => this.nextSlide(), 8000);
-		};
-		img.src = this.state.data[this.index].full;
+				this.timeout = setTimeout(() => this.nextSlide(), 8000);
+			}
+		);
 	}
 
 	render() {
 		if (this.state.currentSlide) {
 			return (
-				<div id='slideshow'>
+				<section className='slideshow'>
 					<div
 						className='slide'
 						key='current'
@@ -78,7 +77,7 @@ export default class Slideshow extends React.Component {
 							)
 						}}
 					/>
-				</div>
+				</section>
 			)
 		};
 		return null;
