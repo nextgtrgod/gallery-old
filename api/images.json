@@ -110,15 +110,6 @@
 			"vibrant": ["#7a4426", "#7b9eae", "#348945", "#141414", "#f3ccb4"]
 		},
 		{
-			"grid": "9 / 14 / 17 / 23",
-			"size": "wide",
-			"full": "./images/1.jpg",
-			"small": "./images/1.jpg",
-			"delay": 250,
-			"hover": "#00f6ff",
-			"vibrant": []
-		},
-		{
 			"grid": "3 / 15 / 9 / 21",
 			"full": "./images/2.jpg",
 			"small": "./images/2.jpg",
@@ -147,6 +138,15 @@
 			"full": "./images/16.jpg",
 			"small": "./images/16.jpg",
 			"delay": 100,
+			"hover": "#00f6ff",
+			"vibrant": []
+		},
+		{
+			"grid": "9 / 14 / 17 / 23",
+			"size": "wide",
+			"full": "./images/1.jpg",
+			"small": "./images/1.jpg",
+			"delay": 250,
 			"hover": "#00f6ff",
 			"vibrant": []
 		},

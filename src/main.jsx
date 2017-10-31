@@ -3,6 +3,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import main from './styles/main.styl';
 
@@ -43,22 +44,30 @@ class App extends React.Component {
 	render() {
 		return (
 			<Router>
-				<Switch>
+				<Route render={({ location }) =>
+					<TransitionGroup className='gallery-transition'>
+						<CSSTransition
+							key={location.key}
+							timeout={2000}
+							classNames='route-transition'
+							mountOnEnter={true}
+							unmountOnExit={true}>
 
-					{this.state.data ?
-						<Route
-							path='/:page?'
-							render={props => {
-									return (
-										<Gallery data={this.state.data} {...props} />
-									)
+							<Switch location={location}>
+
+								{this.state.data ?
+									<Route
+										path='/:page?'
+										render={props => <Gallery data={this.state.data} {...props} />}
+									/>
+									: null
 								}
-							}
-						/>
-						: null
-					}
-	
-				</Switch>
+				
+							</Switch>
+
+						</CSSTransition>
+					</TransitionGroup>
+				} />
 			</Router>
 		)
 	}

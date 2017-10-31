@@ -1,4 +1,6 @@
 import React from 'react';
+import classNames from 'classnames';
+
 
 import preload from '../modules/preload';
 
@@ -9,9 +11,8 @@ export default class Image extends React.Component {
 
 		this.state = {
 			data: this.props.data,
-			background: null,
-			loaded: false
-		}
+			background: null
+		};
 	}
 
 	componentWillMount = () => {
@@ -24,17 +25,27 @@ export default class Image extends React.Component {
 	}
 
 	render() {
+		let cls = classNames({
+			'gallery__item': true,
+			'loaded': this.state.background
+		});
+
 		return (
 			<div
-				key={this.props.index}
-				className={'gallery__item' + (this.state.background ? ' loaded' : '')}
+				className={cls}
 				style={{
-					backgroundImage: (this.state.background ? `url(${this.state.background})` : null),
-					gridArea: this.props.grid,
-					color: this.state.data.hover
+					color: this.state.data.hover,
+					gridArea: this.props.grid
 				}}
-				tabIndex={0}
-			/>
+				tabIndex={0}>
+				<div
+					className='image'
+					style={{
+						backgroundImage: (this.state.background ? `url(${this.state.background})` : null)
+					}}>
+				</div>
+				<div className='revealer'></div>	
+			</div>
 		)
 	}
 }

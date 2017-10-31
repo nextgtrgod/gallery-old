@@ -16,6 +16,7 @@ Simple photo gallery
 - [x] Mobile layout lazyload
 - [x] Desktop layout rendering (react, react-router)
 - [x] 404 page
+- [x] react router transition
 - [ ] flex fallback (ie)
 - [ ] Tilt effect
 - [ ] lightbox

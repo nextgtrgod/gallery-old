@@ -54,26 +54,17 @@ body
 
 	&__item
 		position relative
-		background-default()
 		pointer-events none
-		overflow hidden
 		// image-rendering pixelated
-		&.loaded
-			pointer-events all
-			cursor pointer
-			&:after
-				animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
-
-		&:before
-			content ''
+		opacity .8
+		transition all .4s
+		.image
 			absolute()
-			background currentColor
-			mix-blend-mode exclusion
-			opacity 0
-			transition opacity .2s
-			pointer-events none
+			background-default()
+			filter saturate(0) contrast(1.5)
+			transition all .4s
 
-		&:after
+		.revealer
 			content ''
 			position absolute
 			top -2px
@@ -85,12 +76,20 @@ body
 			pointer-events none
 			z-index 1
 
+		&.loaded
+			pointer-events all
+			cursor pointer
+			.revealer
+				animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
+
+
 
 		&:focus
 		&:hover
 			outline none
-			&:before
-				opacity 1
+			opacity 1
+			.image
+				filter saturate(1.1) contrast(1.1)
 
 
 	&__link
@@ -98,10 +97,10 @@ body
 		align-items center
 		padding 1em
 		background-color #FFFA3A
-		border 1px solid #111
 		box-shadow 7px 7px 0px #111
 		color #252626
 		transition all .2s
+		animation fade-in .4s forwards
 		cursor pointer
 		svg
 			margin 0 0 0 auto
@@ -205,3 +204,47 @@ section
 
 @import 'partials/animation'
 @import 'partials/scrollbar'
+
+
+
+// route animation
+.route-transition
+	&-enter
+		&-active
+			.gallery__item
+				opacity 0
+				pointer-events none
+				animation fade-in-special 0s forwards
+				animation-delay 1s
+				.revealer
+					animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
+					animation-delay 1s
+			
+			.gallery__link
+				opacity 0
+				transition opacity 0s
+				animation fade-in 1s forwards
+				animation-delay 1s
+			
+			.page-number
+				opacity 0
+				animation fade-in 1s forwards
+				animation-delay 1s
+
+
+	&-exit
+		&-active
+			.gallery__item
+				pointer-events none
+				animation fade-out 0s forwards
+				animation-delay 1s
+				.revealer
+					animation hideY 1s cubic-bezier(.7, 0, .3, 1) forwards
+
+			
+			.gallery__link
+				animation fade-out .5s forwards
+			
+			.page-number
+				animation fade-out .5s forwards
+				animation-delay .5s
