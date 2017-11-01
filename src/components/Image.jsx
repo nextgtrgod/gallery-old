@@ -22,6 +22,11 @@ export default class Image extends React.Component {
 			() => this.setState({ background: this.state.data.small })
 		);
 
+		console.log('Lock \'n Load');
+	}
+
+	componentWillUnmount = () => {
+		console.log('I should go');
 	}
 
 	render() {

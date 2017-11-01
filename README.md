@@ -5,9 +5,14 @@ Simple photo gallery
 * [Node.js](https://nodejs.org/)
 * [Pug](https://pugjs.org/api/getting-started.html)
 * [React.js](https://reactjs.org/)
-* [PostCSS Easing Gradients](https://github.com/larsenwork/postcss-easing-gradients)
+* [react-transition-group](https://github.com/reactjs/react-transition-group)
+* [classnames](https://github.com/JedWatson/classnames)
+* [postCSS easing gradients](https://github.com/larsenwork/postcss-easing-gradients)
 * [Vibrant.js](https://jariz.github.io/vibrant.js/)
 * [SQIP](https://github.com/technopagan/sqip)
+
+
+![gallery screenshot](https://image.ibb.co/dtxvsb/gallery_v5.jpg)
 
 
 ## Todo

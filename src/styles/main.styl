@@ -52,10 +52,21 @@ body
 		grid-auto-columns: calc((calc(100% - 6em) / 30) - 20px)
 		grid-gap 20px
 
+	// page number
+	&:after
+		content attr(data-page)
+		position fixed
+		left 5px
+		bottom 0
+		font-size 12em
+		line-height 1
+		color #442EF4
+		pointer-events none
+		text-shadow -9px 10px 0px #111
+
 	&__item
 		position relative
 		pointer-events none
-		// image-rendering pixelated
 		opacity .8
 		transition all .4s
 		.image
@@ -76,6 +87,15 @@ body
 			pointer-events none
 			z-index 1
 
+		&:after
+			content ''
+			absolute()
+			background-default()
+			background-image url('./assets/grainoverlay.gif')
+			opacity 0
+			transition opacity .4s
+			z-index 1
+
 		&.loaded
 			pointer-events all
 			cursor pointer
@@ -88,8 +108,12 @@ body
 		&:hover
 			outline none
 			opacity 1
+			&:after
+				animation fade-in-out .8s forwards
+				// filter contrast(2)
 			.image
-				filter saturate(1.1) contrast(1.1)
+				filter saturate(1.1) contrast(2)
+				// transition-delay .5s
 
 
 	&__link
@@ -119,18 +143,6 @@ body
 			outline none
 			background-color #442EF4
 			color #FFF
-	
-
-
-.page-number
-	position fixed
-	left 5px
-	bottom 0
-	font-size 12em
-	line-height 1
-	color #442EF4
-	pointer-events none
-	text-shadow -9px 10px 0px #111
 
 
 
@@ -212,13 +224,14 @@ section
 	&-enter
 		&-active
 			.gallery__item
-				opacity 0
-				pointer-events none
-				animation fade-in-special 0s forwards
-				animation-delay 1s
-				.revealer
-					animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
+				&.loaded
+					opacity 0
+					pointer-events none
+					animation fade-in-special 0s forwards
 					animation-delay 1s
+					.revealer
+						animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
+						animation-delay 1s
 			
 			.gallery__link
 				opacity 0
@@ -226,7 +239,7 @@ section
 				animation fade-in 1s forwards
 				animation-delay 1s
 			
-			.page-number
+			&:after
 				opacity 0
 				animation fade-in 1s forwards
 				animation-delay 1s
@@ -245,6 +258,6 @@ section
 			.gallery__link
 				animation fade-out .5s forwards
 			
-			.page-number
+			&:after
 				animation fade-out .5s forwards
 				animation-delay .5s
