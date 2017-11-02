@@ -76,12 +76,15 @@ body
 		position relative
 		pointer-events none
 		opacity .8
-		transition all .4s
+		transition opacity .4s
+		will-change transform
 		.image
 			absolute()
 			background-cover()
 			filter saturate(0) contrast(1.5)
 			transition all .4s
+			backface-visibility hidden
+			
 
 		.revealer
 			content ''
@@ -93,7 +96,7 @@ body
 			background-color #262626
 			transform-origin 50% 100%
 			pointer-events none
-			z-index 1
+			z-index 2
 
 		&:after
 			content ''
@@ -101,7 +104,7 @@ body
 			background-cover()
 			background-image url('./assets/grainoverlay.gif')
 			image-rendering pixelated
-			opacity 0
+			opacity .1
 			transition opacity .4s
 			z-index 1
 

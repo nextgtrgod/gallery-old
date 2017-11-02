@@ -12,6 +12,7 @@ import Page from './components/Page';
 import NotFound from './components/NotFound';
 
 import detectSupport from './modules/detectSupport';
+import gridAnimation from './modules/gridAnimation';
 
 
 class App extends React.Component {

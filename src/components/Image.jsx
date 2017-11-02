@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-
 import preload from '../modules/preload';
+import gridAnimation from '../modules/gridAnimation';
 
 
 export default class Image extends React.Component {
@@ -15,19 +15,21 @@ export default class Image extends React.Component {
 		};
 	}
 
-	componentWillMount = () => {
-
+	componentWillMount() {
 		preload(
 			this.state.data.small,
 			() => this.setState({ background: this.state.data.small })
 		);
-
-		// console.log('Lock \'n Load');
 	}
 
-	// componentWillUnmount = () => {
-	// 	console.log('I should go');
-	// }
+	componentDidMount() {
+		this.animation = new gridAnimation();
+		this.animation.subscribe(this.node);
+	}
+
+	componentWillUnmount() {
+		this.animation.unsubscribe(this.node);
+	}
 
 	render() {
 		let cls = classNames({
@@ -38,6 +40,7 @@ export default class Image extends React.Component {
 		return (
 			<div
 				className={cls}
+				ref={node => this.node = node}
 				style={{
 					color: this.state.data.hover,
 					gridArea: this.props.grid

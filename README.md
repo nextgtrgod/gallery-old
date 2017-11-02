@@ -22,9 +22,7 @@ Simple photo gallery
 - [x] react router transition
 - [x] flex fallback (ie)
 - [x] lightbox
-- [ ] movement animation
-- [ ] Tilt effect
-
+- [x] movement animation
 - [ ] admin page (react)
 - [ ] edit/post/delete photos
 - [ ] preview on the same page
