@@ -8,8 +8,6 @@ Simple photo gallery
 * [react-transition-group](https://github.com/reactjs/react-transition-group)
 * [classnames](https://github.com/JedWatson/classnames)
 * [postCSS easing gradients](https://github.com/larsenwork/postcss-easing-gradients)
-* [Vibrant.js](https://jariz.github.io/vibrant.js/)
-* [SQIP](https://github.com/technopagan/sqip)
 
 
 ![gallery screenshot](https://image.ibb.co/dtxvsb/gallery_v5.jpg)
@@ -22,11 +20,11 @@ Simple photo gallery
 - [x] Desktop layout rendering (react, react-router)
 - [x] 404 page
 - [x] react router transition
-- [ ] flex fallback (ie)
-- [ ] Tilt effect
-- [ ] lightbox
+- [x] flex fallback (ie)
+- [x] lightbox
 - [ ] movement animation
-- [ ] animated bg
+- [ ] Tilt effect
+
 - [ ] admin page (react)
 - [ ] edit/post/delete photos
 - [ ] preview on the same page

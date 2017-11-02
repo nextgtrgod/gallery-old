@@ -22,12 +22,12 @@ export default class Image extends React.Component {
 			() => this.setState({ background: this.state.data.small })
 		);
 
-		console.log('Lock \'n Load');
+		// console.log('Lock \'n Load');
 	}
 
-	componentWillUnmount = () => {
-		console.log('I should go');
-	}
+	// componentWillUnmount = () => {
+	// 	console.log('I should go');
+	// }
 
 	render() {
 		let cls = classNames({
@@ -42,7 +42,8 @@ export default class Image extends React.Component {
 					color: this.state.data.hover,
 					gridArea: this.props.grid
 				}}
-				tabIndex={0}>
+				tabIndex={0}
+				onClick={() => this.props.onClick(this.props.index)}>
 				<div
 					className='image'
 					style={{

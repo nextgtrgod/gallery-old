@@ -1,0 +1,41 @@
+
+.page-transition
+	&-enter
+		&-active
+			&:after
+				opacity 0
+				animation fade-in 1s forwards
+				animation-delay 1s
+
+			.gallery__item
+				&.loaded
+					opacity 0
+					pointer-events none
+					animation fade-in-transparent 0s forwards
+					animation-delay 1s
+					.revealer
+						animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
+						animation-delay 1s
+			
+			.gallery__link
+				opacity 0
+				transition opacity 0s
+				animation fade-in 1s forwards
+				animation-delay 1s
+
+
+	&-exit
+		&-active
+			&:after
+				animation fade-out .5s forwards
+				animation-delay .5s
+
+			.gallery__item
+				pointer-events none
+				animation fade-out 0s forwards
+				animation-delay 1s
+				.revealer
+					animation hideY 1s cubic-bezier(.7, 0, .3, 1) forwards
+
+			.gallery__link
+				animation fade-out .5s forwards

@@ -1,6 +1,9 @@
 // @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&text=404pagenotfoundReturn');
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100&text=0123456789pagenotfoundgoback');
 
+@import 'partials/animation'
+@import 'partials/scrollbar'
+
 
 absolute()
 	position absolute
@@ -9,8 +12,13 @@ absolute()
 	right 0
 	bottom 0
 
-background-default()
+background-cover()
 	background-size cover
+	background-position center
+	background-repeat no-repeat
+
+background-contain()
+	background-size auto 100%
 	background-position center
 	background-repeat no-repeat
 
@@ -71,7 +79,7 @@ body
 		transition all .4s
 		.image
 			absolute()
-			background-default()
+			background-cover()
 			filter saturate(0) contrast(1.5)
 			transition all .4s
 
@@ -90,8 +98,9 @@ body
 		&:after
 			content ''
 			absolute()
-			background-default()
+			background-cover()
 			background-image url('./assets/grainoverlay.gif')
+			image-rendering pixelated
 			opacity 0
 			transition opacity .4s
 			z-index 1
@@ -109,11 +118,9 @@ body
 			outline none
 			opacity 1
 			&:after
-				animation fade-in-out .8s forwards
-				// filter contrast(2)
+				opacity .4
 			.image
 				filter saturate(1.1) contrast(2)
-				// transition-delay .5s
 
 
 	&__link
@@ -146,6 +153,11 @@ body
 
 
 
+@import 'partials/router'
+
+@import 'partials/lightbox'
+
+
 section
 	animation fade-in .6s forwards
 
@@ -171,7 +183,7 @@ section
 
 		&[data-slideshow='false']
 			background-image url('./assets/404-bg.jpg')
-			background-default()
+			background-cover()
 
 		
 		&>*
@@ -203,61 +215,8 @@ section
 		z-index 1
 		.slide
 			absolute()
-			background-default()
+			background-cover()
 			transition opacity 2s
 
 
-.visible
-	opacity 1
-
-.hidden
-	opacity 0
-
-
-@import 'partials/animation'
-@import 'partials/scrollbar'
-
-
-
-// route animation
-.route-transition
-	&-enter
-		&-active
-			.gallery__item
-				&.loaded
-					opacity 0
-					pointer-events none
-					animation fade-in-special 0s forwards
-					animation-delay 1s
-					.revealer
-						animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
-						animation-delay 1s
-			
-			.gallery__link
-				opacity 0
-				transition opacity 0s
-				animation fade-in 1s forwards
-				animation-delay 1s
-			
-			&:after
-				opacity 0
-				animation fade-in 1s forwards
-				animation-delay 1s
-
-
-	&-exit
-		&-active
-			.gallery__item
-				pointer-events none
-				animation fade-out 0s forwards
-				animation-delay 1s
-				.revealer
-					animation hideY 1s cubic-bezier(.7, 0, .3, 1) forwards
-
-			
-			.gallery__link
-				animation fade-out .5s forwards
-			
-			&:after
-				animation fade-out .5s forwards
-				animation-delay .5s
+@import 'partials/nogrid';

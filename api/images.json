@@ -1,304 +1,162 @@
 {
 	"images": [
 		{
-			"grid": "8 / 5 / 22 / 14",
 			"size": "wide",
 			"full": "./images/0.jpg",
-			"small": "./images/0.jpg",
-			"delay": 200,
-			"hover": "#00f6ff",
-			"vibrant": ["#7a4426", "#7b9eae", "#348945", "#141414", "#f3ccb4"]
+			"small": "./images/0.jpg"
 		},
 		{
-			"grid": "9 / 14 / 17 / 23",
 			"size": "wide",
 			"full": "./images/1.jpg",
-			"small": "./images/1.jpg",
-			"delay": 250,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/1.jpg"
 		},
 		{
-			"grid": "3 / 15 / 9 / 21",
 			"full": "./images/2.jpg",
-			"small": "./images/2.jpg",
-			"delay": 350,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/2.jpg"
 		},
 		{
-			"grid": "1 / 9 / 8 / 15",
-			"full": "./images/3.jpg",
-			"small": "./images/3.jpg",
-			"delay": 70,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"full": "./images/3-full.jpg",
+			"small": "./images/3-small.jpg"
 		},
 		{
-			"grid": "17 / 15 / 26 / 22",
 			"full": "./images/4.jpg",
-			"small": "./images/4.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/4.jpg"
 		},
 		{
-			"grid": "11 / 1 / 17 / 5",
 			"full": "./images/16.jpg",
-			"small": "./images/16.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/16.jpg"
 		},
 		{
-			"grid": "22 / 2 / 30 / 10",
 			"full": "./images/15.jpg",
-			"small": "./images/15.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/15.jpg"
 		},
 		{
-			"grid": "22 / 10 / 29 / 15",
 			"size": "big",
 			"full": "./images/11.jpg",
-			"small": "./images/11.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/11.jpg"
 		},
 		{
-			"grid": "2 / 28 / 13 / 23",
 			"size": "tall",
 			"full": "./images/8.jpg",
-			"small": "./images/8.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/8.jpg"
 		},
 		{
-			"grid": "19 / 26 / 31 / 22",
 			"full": "./images/18.jpg",
-			"small": "./images/18.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/18.jpg"
 		},
 		{
-			"grid": "13 / 29 / 19 / 23",
 			"full": "./images/24.jpg",
-			"small": "./images/24.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/24.jpg"
 		},
 		{
-			"grid": "19 / 32 / 27 / 26",
 			"full": "./images/22.jpg",
-			"small": "./images/22.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/22.jpg"
 		},
+
 		{
-			"grid": "8 / 5 / 22 / 14",
 			"size": "wide",
 			"full": "./images/0.jpg",
-			"small": "./images/0.jpg",
-			"delay": 200,
-			"hover": "#00f6ff",
-			"vibrant": ["#7a4426", "#7b9eae", "#348945", "#141414", "#f3ccb4"]
+			"small": "./images/0.jpg"
 		},
 		{
-			"grid": "3 / 15 / 9 / 21",
-			"full": "./images/2.jpg",
-			"small": "./images/2.jpg",
-			"delay": 350,
-			"hover": "#00f6ff",
-			"vibrant": []
-		},
-		{
-			"grid": "1 / 9 / 8 / 15",
-			"full": "./images/3.jpg",
-			"small": "./images/3.jpg",
-			"delay": 70,
-			"hover": "#00f6ff",
-			"vibrant": []
-		},
-		{
-			"grid": "17 / 15 / 26 / 22",
-			"full": "./images/4.jpg",
-			"small": "./images/4.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
-		},
-		{
-			"grid": "11 / 1 / 17 / 5",
-			"full": "./images/16.jpg",
-			"small": "./images/16.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
-		},
-		{
-			"grid": "9 / 14 / 17 / 23",
 			"size": "wide",
 			"full": "./images/1.jpg",
-			"small": "./images/1.jpg",
-			"delay": 250,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/1.jpg"
 		},
 		{
-			"grid": "22 / 2 / 30 / 10",
+			"full": "./images/2.jpg",
+			"small": "./images/2.jpg"
+		},
+		{
+			"full": "./images/3-full.jpg",
+			"small": "./images/3-small.jpg"
+		},
+		{
+			"full": "./images/4.jpg",
+			"small": "./images/4.jpg"
+		},
+		{
+			"full": "./images/16.jpg",
+			"small": "./images/16.jpg"
+		},
+		{
 			"full": "./images/15.jpg",
-			"small": "./images/15.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/15.jpg"
 		},
 		{
-			"grid": "22 / 10 / 29 / 15",
 			"size": "big",
 			"full": "./images/11.jpg",
-			"small": "./images/11.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/11.jpg"
 		},
 		{
-			"grid": "2 / 28 / 13 / 23",
 			"size": "tall",
 			"full": "./images/8.jpg",
-			"small": "./images/8.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/8.jpg"
 		},
 		{
-			"grid": "19 / 26 / 31 / 22",
 			"full": "./images/18.jpg",
-			"small": "./images/18.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/18.jpg"
 		},
 		{
-			"grid": "13 / 29 / 19 / 23",
 			"full": "./images/24.jpg",
-			"small": "./images/24.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/24.jpg"
 		},
 		{
-			"grid": "19 / 32 / 27 / 26",
 			"full": "./images/22.jpg",
-			"small": "./images/22.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/22.jpg"
 		},
+
 		{
-			"grid": "8 / 5 / 22 / 14",
 			"size": "wide",
 			"full": "./images/0.jpg",
-			"small": "./images/0.jpg",
-			"delay": 200,
-			"hover": "#00f6ff",
-			"vibrant": ["#7a4426", "#7b9eae", "#348945", "#141414", "#f3ccb4"]
+			"small": "./images/0.jpg"
 		},
 		{
-			"grid": "9 / 14 / 17 / 23",
 			"size": "wide",
 			"full": "./images/1.jpg",
-			"small": "./images/1.jpg",
-			"delay": 250,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/1.jpg"
 		},
 		{
-			"grid": "3 / 15 / 9 / 21",
 			"full": "./images/2.jpg",
-			"small": "./images/2.jpg",
-			"delay": 350,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/2.jpg"
 		},
 		{
-			"grid": "1 / 9 / 8 / 15",
-			"full": "./images/3.jpg",
-			"small": "./images/3.jpg",
-			"delay": 70,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"full": "./images/3-full.jpg",
+			"small": "./images/3-small.jpg"
 		},
 		{
-			"grid": "17 / 15 / 26 / 22",
 			"full": "./images/4.jpg",
-			"small": "./images/4.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/4.jpg"
 		},
 		{
-			"grid": "11 / 1 / 17 / 5",
 			"full": "./images/16.jpg",
-			"small": "./images/16.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/16.jpg"
 		},
 		{
-			"grid": "22 / 2 / 30 / 10",
 			"full": "./images/15.jpg",
-			"small": "./images/15.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/15.jpg"
 		},
 		{
-			"grid": "22 / 10 / 29 / 15",
 			"size": "big",
 			"full": "./images/11.jpg",
-			"small": "./images/11.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/11.jpg"
 		},
 		{
-			"grid": "2 / 28 / 13 / 23",
 			"size": "tall",
 			"full": "./images/8.jpg",
-			"small": "./images/8.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/8.jpg"
 		},
 		{
-			"grid": "19 / 26 / 31 / 22",
 			"full": "./images/18.jpg",
-			"small": "./images/18.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/18.jpg"
 		},
 		{
-			"grid": "13 / 29 / 19 / 23",
 			"full": "./images/24.jpg",
-			"small": "./images/24.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/24.jpg"
 		},
 		{
-			"grid": "19 / 32 / 27 / 26",
 			"full": "./images/22.jpg",
-			"small": "./images/22.jpg",
-			"delay": 100,
-			"hover": "#00f6ff",
-			"vibrant": []
+			"small": "./images/22.jpg"
 		}
 	]
 }

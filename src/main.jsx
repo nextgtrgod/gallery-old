@@ -8,8 +8,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import main from './styles/main.styl';
 
 import makeRequest from './modules/makeRequest';
-import Gallery from './components/Gallery';
+import Page from './components/Page';
 import NotFound from './components/NotFound';
+
+import detectSupport from './modules/detectSupport';
 
 
 class App extends React.Component {
@@ -39,17 +41,22 @@ class App extends React.Component {
 
 	componentWillMount() {
 		this.getData();
+
+		if (!detectSupport('grid')) {
+			const root = document.getElementsByTagName('html')[0];
+			root.className = 'no-grid';
+		};
 	}
 
 	render() {
 		return (
 			<Router>
 				<Route render={({ location }) =>
-					<TransitionGroup className='gallery-transition'>
+					<TransitionGroup className='page'>
 						<CSSTransition
 							key={location.key}
 							timeout={2000}
-							classNames='route-transition'
+							classNames='page-transition'
 							mountOnEnter={true}
 							unmountOnExit={true}>
 
@@ -58,7 +65,7 @@ class App extends React.Component {
 								{this.state.data ?
 									<Route
 										path='/:page?'
-										render={props => <Gallery data={this.state.data} {...props} />}
+										render={props => <Page data={this.state.data} {...props} />}
 									/>
 									: null
 								}
