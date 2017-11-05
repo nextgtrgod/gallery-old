@@ -23,6 +23,8 @@ Simple photo gallery
 - [x] flex fallback (ie)
 - [x] lightbox
 - [x] movement animation
-- [ ] admin page (react)
+- [x] router animations sequence
+- [ ] admin page (react + redux)
 - [ ] edit/post/delete photos
-- [ ] preview on the same page
+- [ ] desktop preview on the same page
+- [ ] mobile preview

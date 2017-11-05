@@ -31,8 +31,8 @@ export default class gridAnimation {
 				y: HEIGHT / 2
 			},
 			tilt: {
-				x: 25,
-				y: 25
+				x: 16,
+				y: 16
 			}
 		}
 	
@@ -45,7 +45,8 @@ export default class gridAnimation {
 			this.params.mousePos = getMousePos(e);
 		});
 
-		this.animate();
+		(document.getElementsByTagName('html')[0].className)
+			.includes('any-chrome') && this.animate();
 
 		return instance;
 	}

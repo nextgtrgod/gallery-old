@@ -14,6 +14,8 @@ import NotFound from './components/NotFound';
 import detectSupport from './modules/detectSupport';
 import gridAnimation from './modules/gridAnimation';
 
+import './modules/checkBrowser';
+
 
 class App extends React.Component {
 	constructor(props) {
@@ -45,7 +47,7 @@ class App extends React.Component {
 
 		if (!detectSupport('grid')) {
 			const root = document.getElementsByTagName('html')[0];
-			root.className = 'no-grid';
+			root.classList.add('no-grid');
 		};
 	}
 
@@ -56,7 +58,7 @@ class App extends React.Component {
 					<TransitionGroup className='page'>
 						<CSSTransition
 							key={location.key}
-							timeout={2000}
+							timeout={2550}
 							classNames='page-transition'
 							mountOnEnter={true}
 							unmountOnExit={true}>

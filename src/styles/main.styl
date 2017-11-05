@@ -75,7 +75,7 @@ body
 	&__item
 		position relative
 		pointer-events none
-		opacity .8
+		opacity 0
 		transition opacity .4s
 		will-change transform
 		.image
@@ -109,33 +109,45 @@ body
 			z-index 1
 
 		&.loaded
+			opacity .8
 			pointer-events all
 			cursor pointer
 			.revealer
-				animation showY 1s cubic-bezier(.7, 0, .3, 1) forwards
+				animation showY .8s cubic-bezier(.7, 0, .3, 1) forwards
+
+			&:nth-of-type(1)
+				.revealer
+					animation-delay 0s
+
+			for i in (1..11)
+				&:nth-of-type({i + 1})
+					.revealer
+						animation-delay (.05 * i)s
 
 
 
-		&:focus
-		&:hover
-			outline none
-			opacity 1
-			&:after
-				opacity .4
-			.image
-				filter saturate(1.1) contrast(2)
+			&:focus
+			&:hover
+				outline none
+				opacity 1
+				&:after
+					opacity .4
+				.image
+					filter saturate(1.1) contrast(2)
 
 
 	&__link
+		position relative
 		display flex
 		align-items center
 		padding 1em
 		background-color #FFFA3A
-		box-shadow 7px 7px 0px #111
+		box-shadow 2px 2px 4px rgba(17, 17, 17, .5)
 		color #252626
 		transition all .2s
 		animation fade-in .4s forwards
 		cursor pointer
+		z-index 2
 		svg
 			margin 0 0 0 auto
 			width 1.5em
