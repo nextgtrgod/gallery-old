@@ -37,13 +37,42 @@ export default class gridAnimation {
 		}
 	
 		window.addEventListener('resize', () => {
-			let WIDTH = window.innerWidth;
-			let HEIGHT = window.innerHeight;
+			WIDTH = window.innerWidth;
+			HEIGHT = window.innerHeight;
 		}, false);
 
-		document.addEventListener('mousemove', e => {
-			this.params.mousePos = getMousePos(e);
-		});
+		// gyroscope
+		let gyroPresent = false;
+		let gyroscope = {
+			x: 0,
+			y: 0,
+		};
+		window.addEventListener('deviceorientation', event => {
+			
+			if (event.beta && event.gamma) {
+				gyroPresent = true;
+		
+				gyroscope.x = event.gamma;	// -90..90
+				gyroscope.y = event.beta;	// -180..180
+		
+				if (gyroscope.x > 90)  { gyroscope.x = 90 };
+				if (gyroscope.x < -90) { gyroscope.x = -90 };
+		
+				if (gyroscope.y > 45)  { gyroscope.y = 45 };
+				if (gyroscope.y < -45) { gyroscope.y = -45 };
+
+				this.params.mousePos = {
+					x: (gyroscope.x / 90) * WIDTH,
+					y: (gyroscope.y / 45) * HEIGHT
+				};
+			};
+		}, true);
+
+		if (!gyroPresent) {
+			document.addEventListener('mousemove', e => {
+				this.params.mousePos = getMousePos(e);
+			});
+		};
 
 		(document.getElementsByTagName('html')[0].className)
 			.includes('any-chrome') && this.animate();

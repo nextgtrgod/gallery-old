@@ -21,6 +21,7 @@ export default function Lightbox({isVisible, image, prevImage, nextImage, onClos
 						<div
 							className='lightbox__image'
 							style={{ backgroundImage: `url(${image})` }}
+							onClick={nextImage}
 						/>
 
 					</CSSTransition>

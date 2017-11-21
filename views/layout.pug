@@ -7,10 +7,14 @@ html(lang='en')
 		meta(http-equiv='X-UA-Compatible', content='ie=edge')
 		title GΔLLΞRY
 
+		include criticalStyles
+
 		each stylePath in styles
 			link(rel='stylesheet', href=`${stylePath}`)
 
 	body
+		include preloader
+
 		block content
 
 		each scriptPath in scripts

@@ -8,9 +8,12 @@ Simple photo gallery
 * [react-transition-group](https://github.com/reactjs/react-transition-group)
 * [classnames](https://github.com/JedWatson/classnames)
 * [postCSS easing gradients](https://github.com/larsenwork/postcss-easing-gradients)
+* [SpinKit](https://github.com/tobiasahlin/SpinKit)
 
 
 ![gallery screenshot](https://image.ibb.co/dtxvsb/gallery_v5.jpg)
+
+[DEMO](https://nextgtrgod.github.io/gallery-static)
 
 
 ## Todo

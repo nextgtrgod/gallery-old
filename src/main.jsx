@@ -51,6 +51,10 @@ class App extends React.Component {
 		};
 	}
 
+	componentDidMount() {
+		document.body.classList.add('loaded');
+	}
+
 	render() {
 		return (
 			<Router>
@@ -83,32 +87,4 @@ class App extends React.Component {
 	}
 }
 
-
 ReactDOM.render(<App />, document.getElementById('root'));
-
-
-
-
-
-
-
-
-
-// import imagesLoaded from 'imagesloaded';
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-// 	const galleryItems = document.getElementsByClassName('gallery__item');
-
-
-// 	[...galleryItems].map(item => {
-// 		imagesLoaded(
-// 			item,
-// 			{ background: true },
-// 			() => {
-// 				item.classList.add('loaded');
-// 			});
-// 	});
-
-// });
